@@ -1,2 +1,2 @@
 # JSDS
-ES6 Data Structores
+ES6 Data Structures
