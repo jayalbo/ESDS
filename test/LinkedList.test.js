@@ -1,10 +1,13 @@
-import { List } from "./LinkedList.mjs";
+import { List } from "../LinkedList.mjs";
 
-let ListA = new List();
+let list = new List();
 
-ListA.add(1);
-ListA.add(2);
-ListA.add(3);
-ListA.add(4);
+list.add([1, 2, 6, 3, 7]);
+console.log(list.toArray());
 
-console.log(ListA.get());
+let list2 = list.subList(2, 4);
+console.log(list2.toArray());
+list.remove(1);
+console.log("Remove idx 1 from List 1");
+console.log(list.toArray());
+console.log(list2.toArray());
