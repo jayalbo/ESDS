@@ -1,4 +1,4 @@
-import { List } from "../LinkedList.mjs";
+import { List } from "../JSDS.mjs";
 
 let list = new List();
 
