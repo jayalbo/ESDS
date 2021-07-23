@@ -1,4 +1,4 @@
-import { List } from "../JSDS.mjs";
+import { List } from "../ESDS.mjs";
 
 let list = new List();
 

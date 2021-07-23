@@ -1,8 +1,8 @@
 {
-  "name": "jsds-data-structures",
+  "name": "esds",
   "version": "0.0.1",
   "description": "",
-  "main": "JSDS.mjs",
+  "main": "ESDS.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
