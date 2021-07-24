@@ -22,10 +22,10 @@
 </p>
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#getting-started">Getting Started </a>
+      <a href="#getting-started">Getting Started 🚦 </a>
       <ul>
         <li><a href="#installation">Installation 💾</a></li>
       </ul>
@@ -48,7 +48,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Install NPM package
    ```sh
-   npm i ESDS
+   npm i esds
    ```
 
 <!-- USAGE EXAMPLES -->
@@ -107,14 +107,14 @@ Project Link: [https://github.com/jayalbo/ESDS](https://github.com/jayalbo/ESDS)
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/jayalbo/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/jayalbo/ESDS.svg?style=for-the-badge
 [contributors-url]: https://github.com/jayalbo/ESDS/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jayalbo/repo.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/jayalbo/ESDS.svg?style=for-the-badge
 [forks-url]: https://github.com/jayalbo/ESDS/network/members
-[stars-shield]: https://img.shields.io/github/stars/jayalbo/repo.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/jayalbo/ESDS.svg?style=for-the-badge
 [stars-url]: https://github.com/jayalbo/ESDS/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jayalbo/repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/jayalbo/ESDS.svg?style=for-the-badge
 [issues-url]: https://github.com/jayalbo/ESDS/issues
-[license-shield]: https://img.shields.io/github/license/jayalbo/repo.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/jayalbo/ESDS.svg?style=for-the-badge
 [license-url]: https://github.com/jayalbo/ESDS/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
