@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Queue.mjs</title>
+    <title>JSDoc: Source: Stack.mjs</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Queue.mjs</h1>
+    <h1 class="page-title">Source: Stack.mjs</h1>
 
     
 
@@ -40,24 +40,24 @@ class Node {
 }
 
 /**
- * Queue Class
+ * Stack Class
  */
-class Queue {
+class Stack {
   constructor() {
-    this.queue = new Node();
-    this.head = this.queue;
-    this.tail = this.queue;
+    this.stack = new Node();
+    this.head = this.stack;
     this.idx = 0;
   }
   /**
-   * Add a new value to the queue
+   * Push a new value to the stack
    * @param {any} val
    */
-  add(val) {
-    if (Array.isArray(val)) for (let v of val) this.add(v);
+  push(val) {
+    if (Array.isArray(val)) for (let v of val) this.push(v);
     else {
-      this.tail.next = new Node(val);
-      this.tail = this.tail.next;
+      let temp = new Node(val);
+      temp.next = this.head.next;
+      this.head.next = temp;
       this.idx++;
     }
   }
@@ -65,7 +65,7 @@ class Queue {
    * Retrieves and remove next element
    * @return {any} element
    */
-  poll() {
+  pop() {
     let temp = this.head.next?.val ?? null;
     this.head = this.head.next;
     this.idx--;
@@ -86,14 +86,14 @@ class Queue {
     return this.idx;
   }
   /**
-   * Returns true/false if queue is empty
+   * Returns true/false if stack is empty
    * @return {boolean}
    */
   get isEmpty() {
     return this.idx === 0;
   }
   /**
-   * Converts and return an array from queue
+   * Converts and return an array from stack
    * @return {Array}
    */
   toArray() {
@@ -106,7 +106,7 @@ class Queue {
     return arr;
   }
 }
-export { Queue };
+export { Stack };
 </code></pre>
         </article>
     </section>

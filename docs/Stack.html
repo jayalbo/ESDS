@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Queue</title>
+    <title>JSDoc: Class: Stack</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Queue</h1>
+    <h1 class="page-title">Class: Stack</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Queue<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Stack<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Queue Class</div>
+            <div class="class-description">Stack Class</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="Queue"><span class="type-signature"></span>new Queue<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Stack"><span class="type-signature"></span>new Stack<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line17">line 17</a>
+        <a href="Stack.mjs.html">Stack.mjs</a>, <a href="Stack.mjs.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -149,7 +149,7 @@
 
 
 <div class="description">
-    Returns true/false if queue is empty
+    Returns true/false if stack is empty
 </div>
 
 
@@ -187,7 +187,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line64">line 64</a>
+        <a href="Stack.mjs.html">Stack.mjs</a>, <a href="Stack.mjs.html#line64">line 64</a>
     </li></ul></dd>
     
 
@@ -249,7 +249,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line50">line 50</a>
+        <a href="Stack.mjs.html">Stack.mjs</a>, <a href="Stack.mjs.html#line50">line 50</a>
     </li></ul></dd>
     
 
@@ -311,7 +311,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line57">line 57</a>
+        <a href="Stack.mjs.html">Stack.mjs</a>, <a href="Stack.mjs.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -339,7 +339,7 @@
     
 
     
-    <h4 class="name" id="add"><span class="type-signature"></span>add<span class="signature">(val)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="pop"><span class="type-signature"></span>pop<span class="signature">()</span><span class="type-signature"> &rarr; {any}</span></h4>
     
 
     
@@ -347,7 +347,117 @@
 
 
 <div class="description">
-    Add a new value to the queue
+    Retrieves and remove next element
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Stack.mjs.html">Stack.mjs</a>, <a href="Stack.mjs.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    element
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">any</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="push"><span class="type-signature"></span>push<span class="signature">(val)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Push a new value to the stack
 </div>
 
 
@@ -440,7 +550,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line28">line 28</a>
+        <a href="Stack.mjs.html">Stack.mjs</a>, <a href="Stack.mjs.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -465,116 +575,6 @@
 
 
 
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="poll"><span class="type-signature"></span>poll<span class="signature">()</span><span class="type-signature"> &rarr; {any}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Retrieves and remove next element
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line40">line 40</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    element
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">any</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 
@@ -594,7 +594,7 @@
 
 
 <div class="description">
-    Converts and return an array from queue
+    Converts and return an array from stack
 </div>
 
 
@@ -638,7 +638,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line71">line 71</a>
+        <a href="Stack.mjs.html">Stack.mjs</a>, <a href="Stack.mjs.html#line71">line 71</a>
     </li></ul></dd>
     
 
