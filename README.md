@@ -7,9 +7,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/jayalbo/ESDS">
-  </a>
-
   <h3 align="center">ESDS</h3>
 
   <p align="center">
@@ -18,27 +15,26 @@
     <a href="https://github.com/jayalbo/ESDS/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jayalbo/ESDS/issues">Report Bug</a>
+    <a href="https://github.com/jayalbo/ESDS/issues">Report Bug 🐞</a>
     ·
-    <a href="https://github.com/jayalbo/ESDS/discussions">Request Feature</a>
+    <a href="https://github.com/jayalbo/ESDS/discussions">Request Feature 🗳</a>
   </p>
 </p>
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Getting Started </a>
       <ul>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation">Installation 💾</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#usage">Usage 📚</a></li>
+    <li><a href="#roadmap">Roadmap 📍</a></li>
+    <li><a href="#contributing">Contributing 💪</a></li>
+    <li><a href="#license">License 📝</a></li>
+    <li><a href="#contact">Contact 📧</a></li>
   </ol>
 </details>
 
