@@ -3,6 +3,18 @@
   "version": "0.0.3",
   "description": "",
   "main": "ESDS.js",
+  "bugs": {
+    "url": "https://github.com/jayalbo/ESDS/issues"
+  },
+  "keywords": [
+    "queue",
+    "stack",
+    "list",
+    "linked-list",
+    "linked list",
+    "data_structures",
+    "data structures"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
