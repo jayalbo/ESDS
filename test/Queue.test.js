@@ -1,12 +1,10 @@
-import { Queue } from "../ESDS.mjs";
+import { Queue } from "../ESDS.js";
 
 const queue = new Queue();
 
-const arr = Array(10)
-  .fill(0)
-  .map((x, i) => i + 1);
-
-queue.add(arr);
+queue.add([1, 2, 3]);
+queue.add(4);
+queue.add(5);
 
 while (!queue.isEmpty) {
   console.log(queue.poll());

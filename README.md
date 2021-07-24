@@ -63,8 +63,13 @@ import {Queue, Stack} from 'esds';
 const queue = new Queue();
 const stack = new Stack();
 
-queue.add([1,2,3,4,5]);
-stack.push([1,2,3,4,5]);
+queue.add([1,2,3]);
+queue.add(4);
+queue.add(5);
+
+stack.push([1,2]);
+stack.add(3);
+stack.add([4,5]);
 
 while (!queue.isEmpty){
     console.log(queue.poll()); // 1, 2, 3, 4, 5
