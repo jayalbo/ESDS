@@ -1,7 +1,7 @@
 {
   "name": "esds",
   "version": "0.0.41",
-  "description": "",
+  "description": "ES6 JS lightweight data structures (Queue, Stack, Linked-List)",
   "main": "ESDS.js",
   "bugs": {
     "url": "https://github.com/jayalbo/ESDS/issues"
@@ -24,5 +24,5 @@
   },
   "type": "module",
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
