@@ -58,9 +58,10 @@ To get a local copy up and running follow these simple steps.
 #### Example Queue / Stack
 
 ```JavaScript
-import {Queue, Stack} from 'esds'
+import {Queue, Stack} from 'esds';
+
 const queue = new Queue();
-cosnt stack = new Stack();
+const stack = new Stack();
 
 queue.add([1,2,3,4,5]);
 stack.push([1,2,3,4,5]);
@@ -70,8 +71,41 @@ while (!queue.isEmpty){
 }
 
 while (!stack.isEmpty){
-    console.log(stack.pop()); //5, 4, 3, 2, 1
+    console.log(stack.pop()); // 5, 4, 3, 2, 1
 }
+```
+
+#### Example Linked List
+
+```JavaScript
+import {List} from 'esds';
+
+const a = new List();
+a.add([1, 2, 3, 4]);
+console.log(a.toArray()); // [1, 2, 3, 4]
+
+a.add(5);
+a.add("Six");
+a.add({value: 7, str: "Seven"});
+console.log(a.get(6).val); // "Six"
+
+let head = a.get();
+while(head){
+    console.log(head.val);
+    head = head.next;
+}
+/*
+1
+2
+3
+4
+5
+"Six"
+{value: 7, str: "Seven"}
+*/
+
+let b = a.subList(2, 5);
+console.log(b.toArray()); // [2, 3, 4, 5]
 ```
 
 <!-- ROADMAP -->
