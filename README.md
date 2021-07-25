@@ -1,4 +1,5 @@
 [![Contributors][contributors-shield]][contributors-url]
+[![Downloads][downloads-shield]][downloads-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -157,3 +158,5 @@ Project Link: [https://github.com/jayalbo/ESDS](https://github.com/jayalbo/ESDS)
 [license-shield]: https://img.shields.io/github/license/jayalbo/ESDS.svg?style=for-the-badge
 [license-url]: https://github.com/jayalbo/ESDS/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[downloads-shield]: https://img.shields.io/npm/dw/esds?style=for-the-badge
+[downloads-url]: https://www.npmjs.com/package/esds
