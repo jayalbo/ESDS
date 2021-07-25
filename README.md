@@ -13,7 +13,7 @@
   <p align="center">
     ES Javascript Data Structures (Queue, Stack, Linked List)
     <br />
-    <a href="https://github.com/jayalbo/ESDS/docs"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/jayalbo/ESDS/tree/main/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/jayalbo/ESDS/issues">Report Bug 🐞</a>
