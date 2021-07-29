@@ -1,12 +1,14 @@
 {
   "name": "esds",
-  "version": "0.0.44",
-  "description": "ES6 JS lightweight data structures (Queue, Stack, Linked-List)",
+  "version": "0.1.0",
+  "description": "ES6 JS lightweight data structures (Priority Queue, Queue, Stack, Linked-List)",
   "main": "ESDS.js",
   "bugs": {
     "url": "https://github.com/jayalbo/ESDS/issues"
   },
   "keywords": [
+    "priority queue",
+    "heap",
     "queue",
     "stack",
     "list",

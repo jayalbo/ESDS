@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Queue</title>
+    <title>JSDoc: Class: PriorityQueue</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Queue</h1>
+    <h1 class="page-title">Class: PriorityQueue</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Queue<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>PriorityQueue<span class="signature">(type<span class="signature-attributes">opt</span>, comparator<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Queue Class</div>
+            <div class="class-description">Priority Queue</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="Queue"><span class="type-signature"></span>new Queue<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="PriorityQueue"><span class="type-signature"></span>new PriorityQueue<span class="signature">(type<span class="signature-attributes">opt</span>, comparator<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -58,6 +58,100 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">(min|max|custom) - default min. If custom {comparator} should be provided</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>comparator</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Custom comparator function. E.g. (a,b) => a.priority - b.priority</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -93,7 +187,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line17">line 17</a>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -149,7 +243,7 @@
 
 
 <div class="description">
-    Returns true/false if queue is empty
+    Returns true/false if PQ is empty
 </div>
 
 
@@ -187,7 +281,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line64">line 64</a>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line105">line 105</a>
     </li></ul></dd>
     
 
@@ -211,7 +305,7 @@
 
 
 <div class="description">
-    Peek next element
+    Peek heap element
 </div>
 
 
@@ -249,7 +343,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line50">line 50</a>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line119">line 119</a>
     </li></ul></dd>
     
 
@@ -311,7 +405,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line57">line 57</a>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line98">line 98</a>
     </li></ul></dd>
     
 
@@ -440,7 +534,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line28">line 28</a>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -476,7 +570,7 @@
     
 
     
-    <h4 class="name" id="poll"><span class="type-signature"></span>poll<span class="signature">()</span><span class="type-signature"> &rarr; {any}</span></h4>
+    <h4 class="name" id="clear"><span class="type-signature"></span>clear<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -484,7 +578,7 @@
 
 
 <div class="description">
-    Retrieves and remove next element
+    Clears the PQ
 </div>
 
 
@@ -528,7 +622,250 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line40">line 40</a>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line91">line 91</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="contains"><span class="type-signature"></span>contains<span class="signature">(val)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns true/false if PQ contains certain value among its entries,
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">any</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The value to search for.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line82">line 82</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="poll"><span class="type-signature"></span>poll<span class="signature">()</span><span class="type-signature"> &rarr; {any}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Retrieves and remove element with the highest priority
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -594,7 +931,7 @@
 
 
 <div class="description">
-    Converts and return an array from queue
+    Converts and return an array from stack
 </div>
 
 
@@ -638,7 +975,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Queue.mjs.html">Queue.mjs</a>, <a href="Queue.mjs.html#line71">line 71</a>
+        <a href="PriorityQueue.mjs.html">PriorityQueue.mjs</a>, <a href="PriorityQueue.mjs.html#line112">line 112</a>
     </li></ul></dd>
     
 

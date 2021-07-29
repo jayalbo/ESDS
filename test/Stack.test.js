@@ -1,4 +1,4 @@
-import { Stack } from "../ESDS.mjs";
+import { Stack } from "../ESDS.js";
 
 let stack = new Stack();
 

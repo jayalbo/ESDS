@@ -42,6 +42,204 @@
 
 
 
+    <section>
+        <article><p><a href="https://github.com/jayalbo/ESDS/graphs/contributors"><img src="https://img.shields.io/github/contributors/jayalbo/ESDS.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://www.npmjs.com/package/esds"><img src="https://img.shields.io/npm/dw/esds?style=for-the-badge" alt="Downloads"></a>
+<a href="https://github.com/jayalbo/ESDS/network/members"><img src="https://img.shields.io/github/forks/jayalbo/ESDS.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/jayalbo/ESDS/stargazers"><img src="https://img.shields.io/github/stars/jayalbo/ESDS.svg?style=for-the-badge" alt="Stargazers"></a>
+<a href="https://github.com/jayalbo/ESDS/issues"><img src="https://img.shields.io/github/issues/jayalbo/ESDS.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/jayalbo/ESDS/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/jayalbo/ESDS.svg?style=for-the-badge" alt="MIT License"></a></p>
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <h3 align="center">ESDS</h3>
+  <p align="center">
+    ES Javascript Data Structures (Priority Queue, Queue, Stack, Linked List)
+    <br />
+    <a href="https://jayalbo.github.io/ESDS/"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/jayalbo/ESDS/issues">Report Bug 🐞</a>
+    ·
+    <a href="https://github.com/jayalbo/ESDS/discussions">Request Feature 🗳</a>
+  </p>
+</p>
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#getting-started">Getting Started 🚦 </a>
+      <ul>
+        <li><a href="#installation">Installation 💾</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage 📚</a></li>
+    <li><a href="#roadmap">Roadmap 📍</a></li>
+    <li><a href="#contributing">Contributing 💪</a></li>
+    <li><a href="#license">License 📝</a></li>
+    <li><a href="#contact">Contact 📧</a></li>
+  </ol>
+</details>
+<!-- GETTING STARTED -->
+<h2>Getting Started</h2>
+<p>To get a local copy up and running follow these simple steps.</p>
+<h3>Installation</h3>
+<ol>
+<li>Install NPM package<pre class="prettyprint source lang-sh"><code>npm i esds
+</code></pre>
+</li>
+</ol>
+<!-- USAGE EXAMPLES -->
+<h2>Usage</h2>
+<h4>Example Priority Queue</h4>
+<pre class="prettyprint source lang-javascript"><code>import { PriorityQueue } from &quot;esds&quot;;
+
+const minPQ = new PriorityQueue(&quot;min&quot;); // min PQ (default if not provided)
+const maxPQ = new PriorityQueue(&quot;max&quot;); // max PQ
+
+const arr = [20, 40, 30, 50, 15, 10, 5];
+
+arr.forEach((element) => {
+  minPQ.add(element);
+  maxPQ.add(element);
+});
+
+console.log(minPQ.peek); // 5
+console.log(maxPQ.peek); // 50
+
+while (!minPQ.isEmpty) {
+  console.log(minPQ.poll());
+}
+/*
+5
+10
+15
+20
+40
+30
+50
+*/
+
+while (!maxPQ.isEmpty) {
+  console.log(maxPQ.poll());
+}
+/*
+50
+40
+30
+20
+15
+10
+5
+*/
+
+// Custom comparator
+
+const comparator = (a, b) => a.age - b.age; // Using age (min)
+const customPQ = new PriorityQueue(&quot;custom&quot;, comparator);
+const Person = function (name, age, role) {
+  this.name = name;
+  this.age = age;
+  this.role = role;
+};
+
+customPQ.add(new Person(&quot;Jane Doe&quot;, 26, &quot;Software Engineer&quot;));
+customPQ.add(new Person(&quot;John Doe&quot;, 28, &quot;Cloud Engineer&quot;));
+customPQ.add(new Person(&quot;Ordinary Joe&quot;, 42, &quot;QA&quot;));
+customPQ.add(new Person(&quot;Janie Doe&quot;, 20, &quot;Support Engineer&quot;));
+customPQ.add(new Person(&quot;Fred Bloggs&quot;, 19, &quot;Intern&quot;));
+
+// Contains function using object
+console.log(customPQ.contains(new Person(&quot;Janie Doe&quot;, 20, &quot;Support Engineer&quot;))); // true
+
+// Poll
+while (!customPQ.isEmpty) {
+  console.log(customPQ.poll());
+}
+/*
+{ name: 'Fred Bloggs', age: 19, role: 'Intern' }
+{ name: 'Janie Doe', age: 20, role: 'Support Engineer' }
+{ name: 'Jane Doe', age: 26, role: 'Software Engineer' }
+{ name: 'Ordinary Joe', age: 42, role: 'QA' }
+{ name: 'John Doe', age: 28, role: 'Cloud Engineer' }
+*/
+</code></pre>
+<h4>Example Queue / Stack</h4>
+<pre class="prettyprint source lang-JavaScript"><code>import {Queue, Stack} from 'esds';
+
+const queue = new Queue();
+const stack = new Stack();
+
+queue.add([1,2,3]);
+queue.add(4);
+queue.add(5);
+
+stack.push([1,2]);
+stack.add(3);
+stack.add([4,5]);
+
+while (!queue.isEmpty){
+    console.log(queue.poll()); // 1, 2, 3, 4, 5
+}
+
+while (!stack.isEmpty){
+    console.log(stack.pop()); // 5, 4, 3, 2, 1
+}
+</code></pre>
+<h4>Example Linked List</h4>
+<pre class="prettyprint source lang-JavaScript"><code>import {List} from 'esds';
+
+const a = new List();
+a.add([1, 2, 3, 4]);
+console.log(a.toArray()); // [1, 2, 3, 4]
+
+a.add(5);
+a.add(&quot;Six&quot;);
+a.add({value: 7, str: &quot;Seven&quot;});
+console.log(a.get(6).val); // &quot;Six&quot;
+
+let head = a.get();
+while(head){
+    console.log(head.val);
+    head = head.next;
+}
+/*
+1
+2
+3
+4
+5
+&quot;Six&quot;
+{value: 7, str: &quot;Seven&quot;}
+*/
+
+let b = a.subList(2, 5);
+console.log(b.toArray()); // [2, 3, 4, 5]
+</code></pre>
+<!-- ROADMAP -->
+<h2>Roadmap</h2>
+<p>See the <a href="https://github.com/jayalbo/ESDS/issues">open issues</a> for a list of proposed features (and known issues).</p>
+<!-- CONTRIBUTING -->
+<h2>Contributing</h2>
+<p>Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+<ol>
+<li>Fork the Project</li>
+<li>Create your Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+<li>Commit your Changes (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
+<li>Push to the Branch (<code>git push origin feature/AmazingFeature</code>)</li>
+<li>Open a Pull Request</li>
+</ol>
+<!-- LICENSE -->
+<h2>License</h2>
+<p>Distributed under the MIT License. See <code>LICENSE</code> for more information.</p>
+<!-- CONTACT -->
+<h2>Contact</h2>
+<p>Project Link: <a href="https://github.com/jayalbo/ESDS">https://github.com/jayalbo/ESDS</a></p>
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links --></article>
+    </section>
+
 
 
 
@@ -50,13 +248,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="List.html">List</a></li><li><a href="Node.html">Node</a></li><li><a href="Queue.html">Queue</a></li><li><a href="Stack.html">Stack</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="List.html">List</a></li><li><a href="Node.html">Node</a></li><li><a href="PriorityQueue.html">PriorityQueue</a></li><li><a href="Queue.html">Queue</a></li><li><a href="Stack.html">Stack</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jul 27 2021 15:11:52 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu Jul 29 2021 02:58:02 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
