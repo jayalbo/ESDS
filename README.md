@@ -11,7 +11,7 @@
   <h3 align="center">ESDS</h3>
 
   <p align="center">
-    ES Javascript Data Structures (Priority Queue, Queue, Stack, Linked List)
+    ES Javascript Data Structures (Priority Queue, Trie, Queue, Stack, Linked List)
     <br />
     <a href="https://jayalbo.github.io/ESDS/"><strong>Explore the docs »</strong></a>
     <br />
@@ -31,7 +31,18 @@
         <li><a href="#installation">Installation 💾</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage 📚</a></li>
+    <li><a href="#usage">Usage 📚</a>
+      <ul>
+       <li><a href="#usage">Examples 📑</a>
+          <ul>
+            <li><a href="#priority-queue">Priority Queue 📚</a></li>
+            <li><a href="#trie">Trie 🌲</a></li>
+            <li><a href="#queue-stack">Queue 📚 / Stack 🥞</a></li>
+            <li><a href="#linked-list">Linked List📝</a></li>
+          </ul>
+       </li>
+      </ul>
+    </li>
     <li><a href="#roadmap">Roadmap 📍</a></li>
     <li><a href="#contributing">Contributing 💪</a></li>
     <li><a href="#license">License 📝</a></li>
@@ -54,9 +65,9 @@ To get a local copy up and running follow these simple steps.
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
+## Examples
 
-#### Example Priority Queue
+### Priority Queue
 
 ```javascript
 import { PriorityQueue } from "esds";
@@ -132,7 +143,66 @@ while (!customPQ.isEmpty) {
 */
 ```
 
-#### Example Queue / Stack
+### Trie
+
+```Javascript
+import { Trie } from "esds";
+const countries = [
+  "United States of America",
+  "Canada",
+  "Argentina",
+  "Japan",
+  "Italy",
+  "Germany",
+  "Brazil",
+  "Armenia",
+  "Aruba",
+];
+
+const trie = new Trie();
+
+countries.forEach((element) => trie.add(element)); // Add countries to the Trie
+
+// Check if element exists
+console.log(trie.contains("Argentina")); // True
+console.log(trie.contains("Spain")); // False
+
+// Update content
+trie.update("Argentina", "🇦🇷");
+trie.update("United States of America", "🇺🇸");
+
+// Get content
+console.log(trie.get("Argentina")); // 🇦🇷
+console.log(trie.get("United States of America")); // 🇺🇸
+
+// Retrieve Sub-Trie (DFS)
+const prefix = "Ar";
+const result = trie.find(prefix);
+
+const dfs = (word, node) => {
+  if (node.child?.size > 0) {
+    node.child.forEach((value) => {
+      dfs(`${word}${value.key}`, value);
+    });
+  }
+  if (node.end) console.log(`${word}`);
+  /*
+    Argentina
+    Armenia
+    Aruba
+  */
+};
+dfs(prefix, result);
+
+```
+
+#### Use cases: Auto-complete, string search, word suggestion, prefix, IP routing, etc.
+
+#### Word Prediction Example: https://bit.ly/37hYhPL
+
+![Word Prediction](https://i.imgur.com/RVvFlyk.gif)
+
+### Queue-Stack
 
 ```JavaScript
 import {Queue, Stack} from 'esds';
@@ -157,7 +227,7 @@ while (!stack.isEmpty){
 }
 ```
 
-#### Example Linked List
+#### Linked List
 
 ```JavaScript
 import {List} from 'esds';
