@@ -1,6 +1,6 @@
 {
   "name": "esds",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "ES6 JS lightweight data structures (Priority Queue, Trie, Queue, Stack, Linked-List)",
   "main": "ESDS.js",
   "bugs": {

@@ -45,3 +45,11 @@ const dfs = (word, node) => {
   */
 };
 dfs(prefix, result);
+
+// toArray()
+console.log(trie.toArray());
+
+/*
+  ['United States of America','Canada', 'Argentina', 'Armenia', 
+   'Aruba', 'Japan', 'Italy', 'Germany','Brazil']
+*/

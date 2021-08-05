@@ -147,6 +147,7 @@ while (!customPQ.isEmpty) {
 
 ```Javascript
 import { Trie } from "esds";
+
 const countries = [
   "United States of America",
   "Canada",
@@ -193,6 +194,14 @@ const dfs = (word, node) => {
   */
 };
 dfs(prefix, result);
+
+// toArray()
+console.log(trie.toArray());
+
+/*
+  ['United States of America','Canada', 'Argentina', 'Armenia',
+   'Aruba', 'Japan', 'Italy', 'Germany','Brazil']
+*/
 
 ```
 
