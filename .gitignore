@@ -1,3 +1,6 @@
 test/node_modules
 .vscode
 test/html
+
+# lib/Graph.mjs
+# test/Graph.test.js
