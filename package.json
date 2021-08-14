@@ -1,7 +1,7 @@
 {
   "name": "esds",
-  "version": "0.3.1",
-  "description": "ES6 JS lightweight data structures (Priority Queue, Graph, Trie, Queue, Stack, Linked-List)",
+  "version": "0.4.2",
+  "description": "ES6 JS lightweight data structures (Priority Queue, Binary Search Tree (BST), Graph, Trie, Queue, Stack, Linked-List)",
   "main": "ESDS.js",
   "bugs": {
     "url": "https://github.com/jayalbo/ESDS/issues"
@@ -13,6 +13,9 @@
     "stack",
     "trie",
     "graph",
+    "bst",
+    "binary search tree",
+    "bianry tree",
     "js",
     "es6",
     "directed graph",
