@@ -1,7 +1,7 @@
 {
   "name": "esds",
-  "version": "0.4.2",
-  "description": "ES6 JS lightweight data structures (Priority Queue, Binary Search Tree (BST), Graph, Trie, Queue, Stack, Linked-List)",
+  "version": "0.5.1",
+  "description": "ES6 JS lightweight data structures (Priority Queue, Binary Search Tree (BST), Graph, Bloom Filters, Trie, Queue, Stack, Linked-List)",
   "main": "ESDS.js",
   "bugs": {
     "url": "https://github.com/jayalbo/ESDS/issues"
@@ -17,6 +17,11 @@
     "binary search tree",
     "bianry tree",
     "js",
+    "bloom filters",
+    "bloom-filter",
+    "bloom_filters",
+    "filter",
+    "filters",
     "es6",
     "directed graph",
     "undirected graph",
@@ -37,5 +42,8 @@
   },
   "type": "module",
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xxhash-wasm": "^0.4.1"
+  }
 }

@@ -11,7 +11,7 @@
   <h3 align="center">ESDS</h3>
 
   <p align="center">
-    ES Javascript Data Structures (Priority Queue, Binary Search Tree (BST), Graph, Trie, Queue, Stack, Linked List)
+    ES Javascript Data Structures (Priority Queue, Binary Search Tree (BST), Graph, Trie, Bloom Filter, Queue, Stack, Linked List)
     <br />
     <a href="https://jayalbo.github.io/ESDS/"><strong>Explore the docs »</strong></a>
     <br />
@@ -44,6 +44,7 @@
               </ul>
             </li>
             <li><a href="#trie">Trie 🌲</a></li>
+            <li><a href="#bloom-filter">Bloom Filter ⚘</a></li>
             <li><a href="#queue-stack">Queue 📚 / Stack 🥞</a></li>
             <li><a href="#linked-list">Linked List📝</a></li>
           </ul>
@@ -387,6 +388,61 @@ console.log(trie.toArray());
 #### Word Prediction Example: https://bit.ly/37hYhPL
 
 ![Word Prediction](https://i.imgur.com/RVvFlyk.gif)
+
+### Bloom Filter
+
+#### A Bloom filter is a space-efficient probabilistic data structure that is used to test whether an element is a member of a set. More Info: https://bit.ly/3D9RmH8
+
+```Javascript
+import { BloomFilter } from "esds";
+
+// Create BF
+const BF = new BloomFilter();
+
+// Add individual users
+BF.add("john_89@email.com");
+BF.add("jane2020@email.com");
+BF.add("Joe@email.com");
+BF.add("Doe.Jane@email.com");
+BF.add("Jim.1990@email.com");
+
+// Check individual users
+console.log(BF.has("Doe.Jane@email.com")); // True (User may exists)
+console.log(BF.has("Jimmy@email.com")); // False
+
+// Create second BF
+const BF2 = new BloomFilter(2048, 4); // Size 2048, Num. Hash rounds 4
+
+const users = [
+  "almost",
+  "dopey",
+  "eritrean",
+  "struggle",
+  "hospitable",
+  "factor",
+  "quail",
+];
+
+// Add multiple users
+BF2.add(users);
+
+// Check individual users
+console.log(BF2.has("struggle")); // True (User may exists)
+console.log(BF2.has("house")); // False
+
+// Check multiple values
+console.log(
+  BF2.has(["hospitable", "monitor", "dopey", "factor", "fan", "quail"])
+);
+// [ true, false, true, true, false, true ]
+
+```
+
+#### Bloom Filters use cases:
+
+- Value lookup when false positives are acceptable
+- Avoid expensive lookup operations against DB
+- Content filtering
 
 ### Queue-Stack
 
