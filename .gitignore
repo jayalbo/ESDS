@@ -3,3 +3,5 @@ node_modules
 .vscode
 test/html
 file:/
+.DS_Store
+test/.DS_Store
