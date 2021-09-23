@@ -1,72 +1,53 @@
-import { BST } from "../lib/BST.mjs";
-import { List } from "../lib/LinkedList.mjs";
+import { jest } from "@jest/globals";
+import { BST } from "../ESDS.js";
 
 const bst = new BST();
 
-// Add Elements
-bst.add(10, "Ten");
-bst.add(1, "One");
-bst.add(5, "Five");
-bst.add(7, "Seven");
-bst.add(2, "Two");
-bst.add(0, "Zero");
-bst.add(8, "Eight");
+// Add BST
 
-console.log(bst.toArray("in-order"));
-// [ 0, 1, 2, 5, 7, 8, 10 ]
-console.log(bst.toArray("pre-order"));
-// [ 10, 1, 0, 5, 2, 7, 8 ]
-console.log(bst.toArray("post-order"));
-// [ 0, 2,  8, 7, 5, 1, 10 ]
-console.log(bst.toArray("reverse-in-order"));
-// [ 10, 8, 7, 5, 2, 1, 0 ]
+bst.add(50, "fifty");
+bst.add(20, "twenty");
+bst.add(80, "eighty");
+bst.add(10, "ten");
+bst.add(40, "forty");
+bst.add(70, "seventy");
+bst.add(30, "thirty");
 
-// Get Element
-console.log(bst.get(7));
-/*
-    TreeElement {
-    key: 7,
-    value: 'Seven',
-    left: null,
-    right: TreeElement { key: 8, value: 'Eight', left: null, right: null }
-    }
-*/
-
-// Update Element
-bst.update(8, "はち");
-console.log(bst.get(8).value); // はち
+// toArray
+test("toArray (in-order) ", () => {
+  expect(bst.toArray("in-order")).toStrictEqual([10, 20, 30, 40, 50, 70, 80]);
+});
+test("toArray (pre-order) ", () => {
+  expect(bst.toArray("pre-order")).toStrictEqual([50, 20, 10, 40, 30, 80, 70]);
+});
+test("toArray (post-order) ", () => {
+  expect(bst.toArray("post-order")).toStrictEqual([10, 30, 40, 20, 70, 80, 50]);
+});
+test("toArray (reverse-in-order) ", () => {
+  expect(bst.toArray("reverse-in-order")).toStrictEqual([
+    80, 70, 50, 40, 30, 20, 10,
+  ]);
+});
 
 // Has
-console.log(bst.has(5)); // true
+test("has", () => {
+  expect(bst.has(70)).toBe(true);
+  expect(bst.has(90)).toBe(false);
+});
 
-// Remove Element
-bst.remove(5);
-console.log(bst.has(5)); // false
+// Get
+test("get", () => {
+  expect(bst.get(80).value).toBe("eighty");
+});
 
-// Handling duplicates (Using Linked-list)
-if (bst.has(7)) {
-  // true
-  const list = new List();
-  list.add(bst.get(7).value); // Added "Seven"
-  list.add(["Siete", "しち", "七", "Sieben"]);
-  bst.update(7, list);
-}
-console.log(bst.get(7).value.toArray());
-// [ 'Seven', 'Siete', 'しち', '七', 'Sieben' ]
+// Update
+test("update ", () => {
+  bst.update(80, "ochenta");
+  expect(bst.get(80).value).toBe("ochenta");
+});
 
-// Remove Elements using an iterator in order to prevent a significant unbalanced BST
-
-// JS Generator function
-function* iterator(arr) {
-  let i = 0;
-  while (true) {
-    yield arr[i++];
-    if (i === arr.length) i = 0;
-  }
-}
-
-const removeType = iterator(["predecessor", "successor"]); // in-order predecessor, and in-order successor
-[10, 1, 0, 5, 7].forEach((value) => bst.remove(value, removeType.next().value));
-
-console.log(bst.toArray()); // Default: in-order
-// [ 2, 8 ]
+// Remove
+test("remove ", () => {
+  bst.remove(80);
+  expect(bst.has(80)).toBe(false);
+});

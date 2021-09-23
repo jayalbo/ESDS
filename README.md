@@ -97,26 +97,26 @@ while (!minPQ.isEmpty) {
   console.log(minPQ.poll());
 }
 /*
-5
-10
-15
-20
-40
-30
-50
+    5
+    10
+    15
+    20
+    30
+    40
+    50
 */
 
 while (!maxPQ.isEmpty) {
   console.log(maxPQ.poll());
 }
 /*
-50
-40
-30
-20
-15
-10
-5
+    50
+    40
+    30
+    20
+    15
+    10
+    5
 */
 
 // Custom comparator
@@ -146,8 +146,8 @@ while (!customPQ.isEmpty) {
 { name: 'Fred Bloggs', age: 19, role: 'Intern' }
 { name: 'Janie Doe', age: 20, role: 'Support Engineer' }
 { name: 'Jane Doe', age: 26, role: 'Software Engineer' }
-{ name: 'Ordinary Joe', age: 42, role: 'QA' }
 { name: 'John Doe', age: 28, role: 'Cloud Engineer' }
+{ name: 'Ordinary Joe', age: 42, role: 'QA' }
 */
 ```
 

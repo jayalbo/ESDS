@@ -1,13 +1,32 @@
+import { jest } from "@jest/globals";
 import { Stack } from "../ESDS.js";
 
-let stack = new Stack();
+const stack = new Stack();
 
-const arr = Array(10)
-  .fill(0)
-  .map((x, i) => i + 1);
+//Add sample values
 
-stack.push(arr);
+stack.push([1, 2, 3]);
+stack.push(4);
+stack.push(5);
+stack.push(6);
 
-while (!stack.isEmpty) {
-  console.log(stack.pop());
-}
+test("isEmpty ", () => {
+  expect(stack.isEmpty).toBe(false);
+});
+test("toArray", () => {
+  expect(stack.toArray()).toStrictEqual([6, 5, 4, 3, 2, 1]);
+});
+
+test("Size ", () => {
+  expect(stack.size).toBe(6);
+});
+
+test("Pop ", () => {
+  expect(stack.pop()).toBe(6);
+  expect(stack.pop()).toBe(5);
+  expect(stack.pop()).toBe(4);
+});
+test("Clear", () => {
+  stack.clear();
+  expect(stack.isEmpty).toBe(true);
+});

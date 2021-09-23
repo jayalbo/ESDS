@@ -1,71 +1,68 @@
-import { PriorityQueue } from "../lib/PriorityQueue.mjs";
+import { jest } from "@jest/globals";
+import { PriorityQueue } from "../ESDS.js";
 
-const minPQ = new PriorityQueue(); // Default min PQ
-const maxPQ = new PriorityQueue("max"); // Default min PQ
+// Min PQ
 
-const arr = [20, 40, 30, 50, 15, 10, 5];
+const minPQ = new PriorityQueue("min");
+minPQ.add(50);
+minPQ.add(40);
+minPQ.add(60);
+minPQ.add(5);
+minPQ.add(45);
+minPQ.add(1);
 
-arr.forEach((element) => {
-  minPQ.add(element);
-  maxPQ.add(element);
+test("isEmpty ", () => expect(minPQ.isEmpty).toBe(false));
+test("Size ", () => expect(minPQ.size).toBe(6));
+
+test("Dequeue (Poll) ", () => {
+  expect(minPQ.poll()).toBe(1);
+  expect(minPQ.poll()).toBe(5);
+  expect(minPQ.poll()).toBe(40);
+  expect(minPQ.poll()).toBe(45);
+  expect(minPQ.poll()).toBe(50);
+});
+test("Peek", () => expect(minPQ.peek).toBe(60));
+test("Clear", () => {
+  minPQ.clear();
+  expect(minPQ.isEmpty).toBe(true);
 });
 
-console.log(minPQ.peek); // 5
-console.log(maxPQ.peek); // 50
+// Max PQ
+const maxPQ = new PriorityQueue("max");
+maxPQ.add(50);
+maxPQ.add(40);
+maxPQ.add(60);
+maxPQ.add(5);
+maxPQ.add(45);
+maxPQ.add(1);
 
-while (!minPQ.isEmpty) {
-  console.log(minPQ.poll());
-}
-/*
-5
-10
-15
-20
-40
-30
-50
-*/
+test("Dequeue (Poll) ", () => {
+  expect(maxPQ.poll()).toBe(60);
+  expect(maxPQ.poll()).toBe(50);
+  expect(maxPQ.poll()).toBe(45);
+  expect(maxPQ.poll()).toBe(40);
+  expect(maxPQ.poll()).toBe(5);
+  expect(maxPQ.poll()).toBe(1);
+});
 
-while (!maxPQ.isEmpty) {
-  console.log(maxPQ.poll());
-}
-/*
-50
-40
-30
-20
-15
-10
-5
-*/
+// Custom Comparator
+const comparatorFunction = (a, b) => a.name.localeCompare(b.name); // Object -> String
+const customPQ = new PriorityQueue("custom", comparatorFunction);
 
-// Custom comparator
+customPQ.add({ name: "Tim" });
+customPQ.add({ name: "Jane" });
+customPQ.add({ name: "Mary" });
+customPQ.add({ name: "Jay" });
+customPQ.add({ name: "Bill" });
+customPQ.add({ name: "Amanda" });
+customPQ.add({ name: "Adam" });
 
-const comparator = (a, b) => a.age - b.age; // Using age (min)
-const customPQ = new PriorityQueue("custom", comparator);
-const Person = function (name, age, role) {
-  this.name = name;
-  this.age = age;
-  this.role = role;
-};
-
-customPQ.add(new Person("Jane Doe", 26, "Software Engineer"));
-customPQ.add(new Person("John Doe", 28, "Cloud Engineer"));
-customPQ.add(new Person("Ordinary Joe", 42, "QA"));
-customPQ.add(new Person("Janie Doe", 20, "Support Engineer"));
-customPQ.add(new Person("Fred Bloggs", 19, "Intern"));
-
-// Contains function using object
-console.log(customPQ.contains(new Person("Janie Doe", 20, "Support Engineer"))); // true
-
-// Poll
-while (!customPQ.isEmpty) {
-  console.log(customPQ.poll());
-}
-/*
-{ name: 'Fred Bloggs', age: 19, role: 'Intern' }
-{ name: 'Janie Doe', age: 20, role: 'Support Engineer' }
-{ name: 'Jane Doe', age: 26, role: 'Software Engineer' }
-{ name: 'Ordinary Joe', age: 42, role: 'QA' }
-{ name: 'John Doe', age: 28, role: 'Cloud Engineer' }
-*/
+test("Dequeue (Poll) ", () => {
+  expect(customPQ.poll().name).toBe("Adam");
+  expect(customPQ.poll().name).toBe("Amanda");
+  expect(customPQ.poll().name).toBe("Bill");
+  expect(customPQ.poll().name).toBe("Jane");
+  expect(customPQ.poll().name).toBe("Jay");
+  expect(customPQ.poll().name).toBe("Mary");
+  expect(customPQ.poll().name).toBe("Tim");
+});

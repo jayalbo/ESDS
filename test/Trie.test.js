@@ -1,4 +1,8 @@
-import { Trie } from "../lib/Trie.mjs";
+import { jest } from "@jest/globals";
+import { Trie } from "../ESDS.js";
+
+const trie = new Trie();
+
 const countries = [
   "United States of America",
   "Canada",
@@ -11,25 +15,25 @@ const countries = [
   "Aruba",
 ];
 
-const trie = new Trie();
-
 countries.forEach((element) => trie.add(element)); // Add countries to the Trie
 
 // Check if element exists
-console.log(trie.contains("Argentina")); // True
-console.log(trie.contains("Spain")); // False
+test("contains", () => {
+  expect(trie.contains("Argentina")).toBe(true);
+  expect(trie.contains("France")).toBe(false);
+});
 
-// Update content
-trie.update("Argentina", "🇦🇷");
-trie.update("United States of America", "🇺🇸");
+// Update & get
+test("get", () => {
+  trie.update("Argentina", "🇦🇷");
+  trie.update("United States of America", "🇺🇸");
 
-// Get content
-console.log(trie.get("Argentina")); // 🇦🇷
-console.log(trie.get("United States of America")); // 🇺🇸
+  expect(trie.get("Argentina")).toBe("🇦🇷");
+  expect(trie.get("United States of America")).toBe("🇺🇸");
+});
 
-// Retrieve Sub-Trie (DFS)
-const prefix = "Ar";
-const result = trie.find(prefix);
+// DFS (Prefix)
+let resultArr = [];
 
 const dfs = (word, node) => {
   if (node.child?.size > 0) {
@@ -37,19 +41,10 @@ const dfs = (word, node) => {
       dfs(`${word}${value.key}`, value);
     });
   }
-  if (node.end) console.log(`${word}`);
-  /*  
-    Argentina
-    Armenia
-    Aruba
-  */
+  if (node.end) resultArr.push(word);
 };
-dfs(prefix, result);
+dfs("Ar", trie.find("Ar"));
 
-// toArray()
-console.log(trie.toArray());
-
-/*
-  ['United States of America','Canada', 'Argentina', 'Armenia', 
-   'Aruba', 'Japan', 'Italy', 'Germany','Brazil']
-*/
+test("find ", () => {
+  expect(resultArr).toStrictEqual(["Argentina", "Armenia", "Aruba"]);
+});

@@ -1,6 +1,6 @@
 {
   "name": "esds",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "ES6 JS lightweight data structures (Priority Queue, Binary Search Tree (BST), Graph, Bloom Filters, Trie, Queue, Stack, Linked-List)",
   "main": "ESDS.js",
   "bugs": {
