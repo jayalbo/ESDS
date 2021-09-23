@@ -3,8 +3,3 @@ node_modules
 .vscode
 test/html
 file:/
-# lib/BST.mjs
-# test/BST.test.js
-
-# lib/Graph.mjs
-# test/Graph.test.js
